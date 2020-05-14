@@ -9,11 +9,11 @@ osob_dzis = 0
 dzien = 0
 dni = []
 
-connection = psycopg2.connect(user="user_program",
-                                  password="mragorp",
-                                  host="127.0.0.1",
+connection = psycopg2.connect(user="",
+                                  password="",
+                                  host="",
                                   port="5432",
-                                  database="gps_db")
+                                  database="")
 cursor_al1 = connection.cursor()
 select_al1 = "select * from gps_id"
 cursor_al1.execute(select_al1)
