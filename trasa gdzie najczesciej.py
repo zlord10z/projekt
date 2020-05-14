@@ -5,11 +5,11 @@ import time
 import datetime
 from datetime import date
 
-connection = psycopg2.connect(user="user_program",
-                                  password="mragorp",
-                                  host="127.0.0.1",
+connection = psycopg2.connect(user="",
+                                  password="",
+                                  host="",
                                   port="5432",
-                                  database="gps_db")
+                                  database="")
 
 
 cursor_al1 = connection.cursor()
