@@ -10,11 +10,11 @@ class BazaDanych:
 
 
     try:
-        connection = psycopg2.connect(user="user_program",
-                              password="mragorp",
+        connection = psycopg2.connect(user="",
+                              password="",
                               host="127.0.0.1",
                               port="5432",
-                              database="gps_db")
+                              database="")
 
 
 
