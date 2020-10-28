@@ -20,11 +20,11 @@ uid = []
 lat = []
 lon = []
 timestamp = []
-
-
+pkl = []
+p = 0
 #by policzyc ile jest uid i liste jakie sa (Dane 1)
 for row in uidzbazy:
-    uid_petla.append(row[1])
+    uid_petla.append(row[0])
 
 uid_petla = list(dict.fromkeys(uid_petla))
 
@@ -50,8 +50,8 @@ for i in range( len(uid_petla) ):                 #pętla do obliczen dla kazdeg
         
        #zapełenienie list rekordami z bazy dla danego UID i danej godziny
         for row in rekordy:
-            timestamp_all.append(row[0])
-            uid_all.append(row[1])
+            timestamp_all.append(row[4])
+            uid_all.append(row[0])
             lat_all.append(row[2])
             lon_all.append(row[3])
 
@@ -97,13 +97,20 @@ print(lat)
 print(lon)
 print(timestamp)
 
+#primary key for route
+bd.selecta4()
+pkrf = getattr(bd,'pkrf')
+for row in pkrf:
+    pkl.append(row[0])
+p = len(pkl)
+    
 
 #test
 #for i in range (len(timestamp)):
 #    print(timestamp[i])
 
 for i in range (len(timestamp)):
-    bd.insert(timestamp[i],uid[i],lat[i],lon[i])
+    bd.insert(lat[i],lon[i],timestamp[i],uid[i])
 print(len(timestamp))
 print(len(uid))
 print(len(lat))

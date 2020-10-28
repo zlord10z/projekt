@@ -22,11 +22,13 @@ uid = []
 lat = []
 lon = []
 timestamp = []
+pkl = []
+p = 0
 
 
 #by policzyc ile jest uid i liste jakie sa (Dane 1)
 for row in uidzbazy:
-    uid_petla.append(row[1])
+    uid_petla.append(row[0])
 
 uid_petla = list(dict.fromkeys(uid_petla))
 
@@ -43,7 +45,7 @@ for i in range( len(uid_petla) ):                 #pętla do obliczen dla kazdeg
         bd.selecta2( uid_petla[d],m)
         #bd.selecta( uid_petla[d],1,24)
         rekordy = getattr(bd,'gpsrekordy1234')
-        print(rekordy)
+        #print(rekordy)
         
         timestamp_all =[]
         uid_all = []
@@ -52,7 +54,7 @@ for i in range( len(uid_petla) ):                 #pętla do obliczen dla kazdeg
         
        #zapełenienie list rekordami z bazy dla danego UID i danej godziny
         for row in rekordy:
-            timestamp_all.append(row[0])
+            timestamp_all.append(row[4])
             uid_all.append(row[1])
             lat_all.append(row[2])
             lon_all.append(row[3])
@@ -94,10 +96,18 @@ for i in range( len(uid_petla) ):                 #pętla do obliczen dla kazdeg
 #lon = list(dict.fromkeys(lon))
 #timestamp = list(dict.fromkeys(timestamp))
 
-print(uid)
-print(lat)
-print(lon)
-print(timestamp)
+#print(uid)
+#print(lat)
+#print(lon)
+#print(timestamp)
+
+bd.selecta4()
+pkrf = getattr(bd,'pkrf')
+for row in pkrf:
+    pkl.append(row[1])
+p = len(pkl)
+
+
 
 
 #test

@@ -1,0 +1,11 @@
+insert into public.forecast(forecast_lat,forecast_long,forecast_time,user_id,location_id,forecast_id) values ('','','','','','');
+
+select public.user.user_id, public.user.user_uid, public.location.latitude, public.location.longtitude, public.user_location.time_stamp 
+from public.user 
+join public.user_location 
+on public.user.user_id = public.user_location.user_id
+join public.location 
+on public.user_location.location_id = public.location.location_id
+
+
+

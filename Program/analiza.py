@@ -1,5 +1,9 @@
 from klasy111 import BazaDanych
 import math
+from datetime import date
+data = date.today()
+
+
 
 bd = BazaDanych()
 
@@ -17,7 +21,7 @@ dzien = 0
 dni = []
 
 for row in uidzbazy:
-    uid_petla.append(row[1])
+    uid_petla.append(row[0])
 
 uid_petla = list(dict.fromkeys(uid_petla))
 
@@ -38,8 +42,8 @@ print(dzien)
 #y osoby, x dni
 
 for row in bazaosoby:
-    al_y.append(row[0])
-    dni.append(row[1])
+    al_y.append(row[1])
+    dni.append(row[0])
 
 al_y.append(osob_dzis)
 dzien = len(dni) + 1
@@ -83,4 +87,4 @@ else:
     al_a = 0
     al_b = 0
 
-bd.insert3(osob_dzis, dzien, al_a, al_b)
+bd.insert3(osob_dzis,data, al_a, al_b)
