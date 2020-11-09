@@ -1,2 +1,2 @@
 # projekt
-bliblioteki niestandardowe: psycopg2
+bliblioteki niestandardowe: psycopg2, numPy
