@@ -226,7 +226,7 @@ class Api:
             'Accept': 'application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8',
         }
         call = requests.get(
-            'https://api.openrouteservice.org/v2/directions/foot-walking?api_key=5b3ce3597851110001cf6248bef1d8a9464f4251847da4666ca134e2&start=' + str(
+            'https://api.openrouteservice.org/v2/directions/foot-walking?api_key=#####' + str(
                 to_api), headers=headers)
 
         # print(call.status_code, call.reason)
