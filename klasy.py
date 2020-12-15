@@ -33,7 +33,7 @@ class BazaDanych:
 
     try:
         connection = psycopg2.connect(user="maurycy",
-                                                                                                            password="mragorp",
+                                                                                                            password="",
                               host="192.168.1.140",
                               port="5432",
                               database="covid")
