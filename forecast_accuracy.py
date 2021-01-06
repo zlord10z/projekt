@@ -95,8 +95,8 @@ for i in range(len(infected_id)):
             error()
 
 
-for i in range (len(timestamp)):
-    bd.insert("insert into forecast_accuracy(distance,user_id,time_stamp) values (%s,%s,%s)",(list_distance[i],list_id[i],forecast_time[i]))
+#for i in range (len(timestamp)):
+#    bd.insert("insert into forecast_accuracy(distance,user_id,time_stamp) values (%s,%s,%s)",(list_distance[i],list_id[i],forecast_time[i]))
 
 
 

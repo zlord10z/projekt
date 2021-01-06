@@ -1,4 +1,5 @@
 from datetime import date
+import datetime
 from database import Database
 from errors import error
 from sql_queries import sql_query
@@ -10,6 +11,7 @@ all_id = []
 
 distance_infected = 0
 distance_noninfected = 0
+yesterday = datetime.date.today() - datetime.timedelta(days=1)
 
 #tworzenie listy id wszystkich użytkowników (zakażonych i niezakażonych)
 query = db.select(sql_query(3))
@@ -35,7 +37,8 @@ for i in range(2):
         user_id = all_id[i]
         string_1 = (sql_query(0)+"where public.user.user_id = "+str(user_id))
         string_2 = (" and health_condition " + health_condition)
-        string = string_1 + string_2
+        string_3 = (" and time_stamp between '" + str(yesterday) + "' and '"+str(yesterday  + datetime.timedelta(days=1))+"'")
+        string = string_1 + string_2 + string_3
         query = db.select(string)
         
         lat = []
@@ -60,11 +63,14 @@ for i in range(2):
 
                 else:
                     distance_noninfected += d
-            else:
+            except:
                 error()
 
 print(distance_infected)
 
 print("zakazeni dystans:",round(distance_infected,2),"km")
 print("niezakazeni dystans:",round(distance_noninfected,2),"km")
+
+db.insert_distance(yesterday,distance_noninfected,distance_infected)
 db.connection.close()
+

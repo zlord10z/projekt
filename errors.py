@@ -1,3 +1,4 @@
+#zmienic nazwe z errors_aws na errors gdy program wystartuje na serwerze
 import traceback
 from datetime import datetime
 import subprocess
@@ -14,9 +15,9 @@ def error():
         errors.close
 
 
-        subject = "log " + str(now)
+        subject = "log " + str(current_time)
         message = str(traceback.format_exc()) 
-        command = ("mail -s \""+str(subject)+"\" address@mail.com <<< \""+str(message)+"\"")
+        command = ("mail -s \""+str(subject)+"\" zikkurat12321@gmail.com <<< \""+str(message)+"\"")
         print(command)
         subprocess.Popen(['/bin/bash', '-c', command])
 

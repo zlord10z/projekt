@@ -100,7 +100,7 @@ for i in range(len(infected_id)):
 
 
 for i in range (len(list_lat)):
-    bd.insert("insert into route(route_lat,route_long,route_time,user_id) values (%s, %s, %s, %s)",(list_lat[i],list_long[i],yesterday,list_id[i]))
+    bd.insert_route(list_lat[i],list_long[i],yesterday,list_id[i])
 
 #rozłączenie z bazą
 db.connection.close()

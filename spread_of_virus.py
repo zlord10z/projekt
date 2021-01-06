@@ -75,7 +75,7 @@ for k in range(15):
 for i in range(len(possibly_infected)):        
     #update health condition
     query = sql_query(6) + str(possibly_infected[i])
-    db.insert(query)
+    db.update(query)
 
 db.connection.close()
 

@@ -128,7 +128,7 @@ for i in range(len(list_id)):  # pętla do obliczen dla kazdego UID z osobna
 
 
 for i in range(len(uid_day)):
-    bd.insert("insert into forecast(forecast_lat,forecast_long,forecast_time,user_id) values (%s, %s, %s, %s)",(lat_forecast[i],long_forecast[i],timestamp_forecast[i],uid_forecast[i]))
+    bd.insert_forecast(lat_forecast[i],long_forecast[i],timestamp_forecast[i],uid_forecast[i])
 
 
 db.connection.close()
