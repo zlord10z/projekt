@@ -1,0 +1,50 @@
+ select  public.location.user_id, public.location.time_stamp, public.location.latitude, public.location.longitude, public.user.health_condition 
+ from public.location
+ join public.user
+ on public.user.user_id = public.location.user_id 
+ 
+ /* 0. */
+$
+ select  public.location.user_id, public.location.time_stamp, public.location.latitude, public.location.longitude, public.user.health_condition 
+ from public.location
+ join public.user
+ on public.user.user_id = public.location.user_id
+ where health_condition = 'infected'
+ /* 1. */
+$
+ select  public.user.user_id, public.user.health_condition 
+ from public.user
+ where health_condition = 'infected'
+ /* 2. */
+$
+ select  public.user.user_id, public.user.health_condition 
+ from public.user
+ 
+ /* 3.(wykorzystane w distance) */
+$
+ /* 4.(wykorzystane w forecast, route) */
+ select  public.user.user_id, public.user.health_condition 
+ from public.user
+ where health_condition = 'infected'  
+
+$ 
+ select  public.location.user_id, public.location.time_stamp, public.location.latitude, public.location.longitude, public.user.health_condition 
+ from public.location
+ join public.user
+ on public.user.user_id = public.location.user_id
+ where public.user.user_id = 1
+ /* 5.(wykorzystane w distance_one_id) */
+$
+ UPDATE public.user SET health_condition = 'possibly infected' where public.user.user_id = "
+ /* 6.(wykorzystane w spread_of_infection)                    */
+$
+/* 7.(wykorzystano w spread_of_virus)*/
+ select  public.location.user_id, public.location.time_stamp, public.location.latitude, public.location.longitude, public.user.health_condition 
+ from public.location
+ join public.user
+ on public.user.user_id = public.location.user_id 
+ WHERE public.user.user_id = 
+ 
+
+
+
